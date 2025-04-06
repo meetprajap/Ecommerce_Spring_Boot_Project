@@ -1,0 +1,45 @@
+ADMIN USERNAME : admin
+      PASSWORD : admin123
+
+Note : in postman in header add this
+	Header : 
+		KEY: Content-Type   VALUE : application/json; charset=UTF-8
+		KEY: Authorization  VALUE : Basic YWRtaW46YWRtaW4xMjM=
+
+ALL API WORK PROPERLY
+
+--> http://localhost:8081/api/users (post permit for all)
+
+ {
+    "username": "meet",
+    "password": "meetd123",
+    "email": "meet@example.com"
+ }
+
+-->http://localhost:8081/orders  (POST) 
+
+ {
+    "quantity": 2,
+    "totalAmount": 100.0,
+    "user": {
+        "id": 1
+    },
+    "products": [
+        {
+            "id": 1
+        }
+    ]
+ }
+
+-->POST http://localhost:8081/api/products (POST) permit for only admin
+
+ { 
+    "name": "Laptop",
+    "available_quantity": 10,
+    "price": 50.0
+ }
+
+ALL delete api permit for only admin
+
+
+if admin is delete than we authorized it,then it is created again
